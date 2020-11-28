@@ -29,6 +29,18 @@ we are done. If there would be more than "0 upgraded" packages, we'll send the S
    
 That's it.
 
+## Running it from cron.daily
+Remeber to rename it and remove the .sh extension
+The cronjobs in /etc/cron.hourly (and the other, similar directories) are executed by run-parts. run-parts is a little picky about filenames. By default it doesn't execute files whose filenames contain anything other than (all of those from ASCII)
+
+uppercase letters
+lowercase letters
+digits
+underscores
+dashes ("minus signs")
+So if your script has a filename of for example "myscript.sh", it just is ignored, because run-parts does not like the dot.
+https://askubuntu.com/questions/611336/why-putting-a-script-in-etc-cron-hourly-is-not-working
+
 ## Imaginable Extensions
 - Modify the `color` attribute of the Slack message due to the existence of security related upgrades (at the moment it's always "danger").
 - Cache the result of the simulation in a file to avoid resending the identical message over and over.
