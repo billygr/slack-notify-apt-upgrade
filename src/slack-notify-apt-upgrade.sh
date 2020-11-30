@@ -31,7 +31,7 @@ else
                 exit
         fi
 
-        text="Please upgrade your server! \n$check"
+        text="Please upgrade your server $username! \n$check"
 fi
 
 escapedText=$(echo $text | sed 's/"/\"/g' | sed "s/'/\'/g" )
