@@ -25,7 +25,7 @@ else
 
         check=$(apt-get upgrade --simulate)
 
-        if [[ $check == *"0 upgraded"* ]]
+        if [[ $check == *"0 upgraded"* ]] || [[ $check == *"0 to upgrade"* ]]
         then
                 echo "Nothing to do for today."
                 exit
